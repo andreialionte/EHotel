@@ -1,0 +1,26 @@
+
+.backgroundShadow h2 p{
+   position: relative;
+        }
+
+          
+.services-column {
+display: flex;
+gap: 0;
+          }
+
+    .column{
+      flex: 1;
+      padding: 10px;
+    }
+
+    .navBar{
+       display: flex;
+       align-items: center;
+       background-color: white;
+       justify-content: space-between;
+       gap: 10px;       
+    }
+
+
+
