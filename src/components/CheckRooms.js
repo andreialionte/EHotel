@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
-import FamilyRoom from './HotelRooms/FamilyRoom'
 import backgroundPh from '../assets/backgroundPh.jpg'
 import H1Ph1 from "../assets/hotel1/sasha-kaunas-67-sOi7mVIk-unsplash.jpg";
 import H2Ph1 from "../assets/hotel2/modern_hotel_room.jpg";
@@ -170,9 +169,9 @@ const CheckRooms = () => {
 
   const navigate = useNavigate();
   
-  const ButtonHandler =() =>{
-    navigate("/FamilyRoom");
-  }
+  // const ButtonHandler =() =>{
+  //   navigate("/FamilyRoom");
+  // }
   
 const returnHomeButtonHandler = () =>{
   navigate("/");
@@ -183,18 +182,17 @@ const returnHomeButtonHandler = () =>{
   const [price, setPrice] = useState("600");
   const [breakfast, setBreakfast] = useState(false);
   const [pets, setPets] = useState(false);
-  const [allRooms, setAllRooms] = useState("all");
   
   
   const photos = [
-  {id: 1, src: H1Ph1, title:"Family", price: 50, roomType: "Single", pets:true, breakfast: true, guests: 1, allRooms: "all"},
-  {id:2, src: H2Ph1, title:"Family", price: 90, roomType: "Double", pets: false, breakfast: true, guests: 3, allRooms: "all"},
-  {id:3, src: H3Ph1, title:"Family", price: 80, roomType: "Double", pets: false, breakfast: false, guests: 2, allRooms: "all"},
-  {id:4, src: H4Ph1, title:"Family", price: 160, roomType: "Double", pets: false, breakfast: false, guests: 2, allRooms: "all"},
-  {id:5, src: H5Ph1, title:"Family", price: 390, roomType: "Family", pets: false, breakfast: false, guests: 6, allRooms: "all"},
-  {id:6, src: H6Ph1, title:"Family", price: 260, roomType: "Family",pets: false, breakfast: false, guests: 4, allRooms: "all"},
-  {id:7, src: H7Ph1, title:"Family", price: 40, roomType: "Single", pets:true, breakfast: true, guests: 1, allRooms: "all"},
-  {id:8, src:H8Ph1, title:"Family", price: 280, roomType: "Family", pets: true, breakfast: true, guests: 5, allRooms: "all"},
+  {id: 1, src: H1Ph1, title:"Family", price: 50, roomType: "Single", pets:true, breakfast: true, guests: 1},
+  {id:2, src: H2Ph1, title:"Family", price: 90, roomType: "Double", pets: false, breakfast: true, guests: 3},
+  {id:3, src: H3Ph1, title:"Family", price: 80, roomType: "Double", pets: false, breakfast: false, guests: 2},
+  {id:4, src: H4Ph1, title:"Family", price: 160, roomType: "Double", pets: false, breakfast: false, guests: 2},
+  {id:5, src: H5Ph1, title:"Family", price: 390, roomType: "Family", pets: false, breakfast: false, guests: 6},
+  {id:6, src: H6Ph1, title:"Family", price: 260, roomType: "Family",pets: false, breakfast: false, guests: 4},
+  {id:7, src: H7Ph1, title:"Family", price: 40, roomType: "Single", pets:true, breakfast: true, guests: 1},
+  {id:8, src:H8Ph1, title:"Family", price: 280, roomType: "Family", pets: true, breakfast: true, guests: 5},
   ];
   
   
@@ -204,9 +202,7 @@ const returnHomeButtonHandler = () =>{
       photo.price <= price &&
       (photo.breakfast === breakfast || !breakfast) &&
       (photo.pets === pets || !pets) &&
-      (roomType === "all" || roomType === photo.roomType) &&
-      //when i select all rooms it should show all the rooms
-      (allRooms === "all" || allRooms === photo.allRooms)
+      (roomType === "all" || roomType === photo.roomType)
 
 
     );

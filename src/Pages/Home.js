@@ -2,7 +2,6 @@ import React from 'react';
 import Banner from '../components/Banner';
 import Services from '../components/Services';
 import Rooms from '../components/Rooms'
-import {motion} from 'framer-motion'
 import Footer from '../components/Footer'
 
 const Service = [
